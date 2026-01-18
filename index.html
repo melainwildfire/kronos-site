@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Kronos — AI Infrastructure for Nonprofit Growth &amp; Impact&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Kronos gives nonprofit teams a smarter system to organize volunteers, engage donors, and scale impact—without burnout." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* Company palette (black + gold + red/orange) */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg:#07070a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--panel:#101017;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text:#f5f5f7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted:#b7b8c7;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--red:#ed4028; <span class="Apple-converted-space">  </span>/* brand red */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gold:#f5b700;<span class="Apple-converted-space">  </span>/* brand gold */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--amber:#ff8a2a; /* warm accent */</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>--line:rgba(255,255,255,.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--soft:rgba(255,255,255,.06);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--radius:16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--max:1120px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--shadow: 0 18px 60px rgba(0,0,0,.55);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html,body{height:100%}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(1100px 640px at 18% 10%, rgba(237,64,40,.22), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(900px 600px at 85% 14%, rgba(245,183,0,.20), transparent 58%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(800px 520px at 70% 90%, rgba(255,138,42,.12), transparent 52%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(180deg, #050507 0%, var(--bg) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>a{color:inherit}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.topbar{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:flex-start; justify-content:space-between; gap:18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:18px 18px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(10px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand{min-width:260px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logo{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight:900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.02em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:46px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height:1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg, #ffe08a 0%, var(--gold) 45%, var(--amber) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-background-clip:text;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-clip:text;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tagline{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top:10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:rgba(255,255,255,.90);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-top:6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top:1px solid rgba(245,183,0,.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width:560px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.qr{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; flex-direction:column; align-items:flex-end; text-align:right; gap:10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.qrbox{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width:220px; height:220px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:rgba(255,255,255,.72);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.06em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.scan{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.22em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:rgba(255,255,255,.75);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top:18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1.55fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap:16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items:start;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 920px){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.topbar{flex-direction:column; align-items:stretch}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.qr{align-items:flex-start; text-align:left}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero{grid-template-columns:1fr}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.qrbox{width:100%; height:180px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.04);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 36px rgba(0,0,0,.35);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0 0 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:42px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height:1.08;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:-.02em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sub{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0 0 16px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height:1.55;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width:60ch;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.01em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform .08s ease, filter .08s ease, border-color .12s ease;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select:none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{transform: translateY(-1px); filter:brightness(1.03);}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn.primary{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg, rgba(237,64,40,.95), rgba(237,64,40,.78));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: rgba(237,64,40,.85);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn.secondary{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(245,183,0,.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: rgba(245,183,0,.28);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kicker{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex; gap:8px; flex-wrap:wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top:14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pill{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:6px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.03);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:rgba(255,255,255,.86);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.02em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>h2{margin:0 0 10px 0; font-size:22px; letter-spacing:-.01em;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h3{margin:0 0 8px 0; font-size:15px; color:rgba(255,255,255,.92);}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.note{margin:0; color:var(--muted); line-height:1.55; font-size:14px;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>section{margin-top:16px;}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grid{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(12, 1fr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap:14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-12{grid-column: span 12;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-6{grid-column: span 6;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-4{grid-column: span 4;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-8{grid-column: span 8;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 920px){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.col-6,.col-4,.col-8{grid-column: span 12;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>ul{margin:10px 0 0 18px; padding:0; color:var(--muted); line-height:1.55;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li{margin:6px 0;}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.step{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.03);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.step-num{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width:30px; height:30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(245,183,0,.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid rgba(245,183,0,.28);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:rgba(255,255,255,.92);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight:900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-right:10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.step-title{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:center; gap:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0 0 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight:900;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.01em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.divider{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height:1px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:14px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.donations{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.donation{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:10px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.03);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.01em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform .08s ease, border-color .12s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.donation:hover{transform: translateY(-1px); border-color: rgba(245,183,0,.35);}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.donation small{display:block; font-weight:700; color:var(--muted); letter-spacing:0; margin-top:3px;}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top:34px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-top:18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top:1px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:rgba(255,255,255,.55);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* simple anchor offset for sticky jumps */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>[id]{scroll-margin-top:16px;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Top Brand Bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="topbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="logo"&gt;KRONOS&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tagline"&gt;Leverage your time. Lift the world.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="qr"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="qrbox"&gt;QR CODE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scan"&gt;SCAN ME&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;AI infrastructure for nonprofit growth &amp;amp; impact.&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="sub"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Kronos gives nonprofit teams a smarter system to organize volunteers, engage donors,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>and get more done with less stress — so you can focus on your mission.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Replace href with your preferred destinations --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="btn primary" href="#support"&gt;Support the mission&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="btn secondary" href="#how"&gt;How it works&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="kicker" aria-label="Category and value tags"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="pill"&gt;AI infrastructure&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="pill"&gt;Nonprofit scale&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="pill"&gt;Donors &amp;amp; volunteers&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="pill"&gt;Less burnout&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Giving back: For every &lt;strong&gt;$100&lt;/strong&gt; spent on Kronos, we donate &lt;strong&gt;$10&lt;/strong&gt; to support nonprofit missions.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;What Kronos is&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Kronos is an AI-powered operating system built for nonprofits. It acts like an intelligent</p>
+<p class="p1"><span class="Apple-converted-space">          </span>co-founder and team manager that clears complexity, automates routine work, and helps your</p>
+<p class="p1"><span class="Apple-converted-space">          </span>organization run more smoothly and confidently.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Who it’s for&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Nonprofit founders and executive directors&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Operations leaders juggling too many tools&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Teams coordinating donors, volunteers, and partners&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Problem + Solution --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card col-6" id="problem"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;The problem&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Nonprofit leaders are overwhelmed by busywork and disconnected systems. You spend too much time</p>
+<p class="p1"><span class="Apple-converted-space">          </span>managing tools and tasks and not enough time doing what matters — helping your community and growing your impact.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card col-6" id="solution"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;The solution&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Kronos replaces fragmented systems with one intelligent operating layer that streamlines operations,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>strengthens fundraising workflows, and gives teams back their time — so organizations can grow without burning out their people.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Three Core Capabilities --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card" id="capabilities"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Three core capabilities&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid" style="margin-top:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step col-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title"&gt;&lt;span class="step-num"&gt;1&lt;/span&gt;Intelligent Structure&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Kronos brings order to chaos. It automates task assignments, clarifies responsibilities, and keeps deadlines visible —</p>
+<p class="p1"><span class="Apple-converted-space">            </span>so nothing falls through the cracks.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step col-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title"&gt;&lt;span class="step-num"&gt;2&lt;/span&gt;The Impact Network&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Kronos connects your organization with the right donors, volunteers, and partners.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>It becomes easier to build relationships that grow your capacity.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="step col-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step-title"&gt;&lt;span class="step-num"&gt;3&lt;/span&gt;Confirmed Commitment&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Kronos helps capture and share proof of participation and engagement,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>so supporters feel valued — and your impact gets noticed.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 3-Step Plan (How it works) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="grid" id="how"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card col-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;How it works (3 steps)&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid" style="margin-top:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step col-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-title"&gt;&lt;span class="step-num"&gt;1&lt;/span&gt;Stabilize&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Centralize systems, automate routine work, and create operational clarity. Chaos becomes structure. Work becomes manageable.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step col-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-title"&gt;&lt;span class="step-num"&gt;2&lt;/span&gt;Strengthen&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Apply AI to improve donor engagement and internal workflows — turning effort into leverage and growth into something predictable.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="step col-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="step-title"&gt;&lt;span class="step-num"&gt;3&lt;/span&gt;Scale&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Expand safely with stable infrastructure in place: more impact, more funding, more capacity — without adding complexity or burnout.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Want the fastest path forward? Start with a simple support action below, or connect with us to explore a full rollout.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-row" style="margin-top:14px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;!-- Replace with your demo link if you have one --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdKHl0EbOIKKyv6qDTgG-HbjktZDN5yF62cSU9NUcKyJJGiJg/viewform" target="_blank" rel="noopener"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Open the support form</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="btn secondary" href="#support"&gt;Choose a support amount&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card col-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Sound bites&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;We give you your nights back.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;We quiet the chaos.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;We make growth feel safe.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;We protect the humans behind the mission.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;We carry the complexity so you can carry the vision.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Support / Donation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card" id="support"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Support nonprofit impact&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Select an amount to contribute. This can mirror your form options and helps fund mission-driven work.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="donations" role="list" aria-label="Support options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="donation" role="listitem" onclick="prefill('100')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>$100</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;small&gt;Supports the mission&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="donation" role="listitem" onclick="prefill('500')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>$500</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;small&gt;Builds capacity&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="donation" role="listitem" onclick="prefill('1000')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>$1,000</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;small&gt;Accelerates scale&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="donation" role="listitem" onclick="prefill('other')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Other</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;small&gt;Custom amount&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Continue to the support form to complete your selection.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cta-row" style="margin-top:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a id="supportLink" class="btn primary"</p>
+<p class="p1"><span class="Apple-converted-space">           </span>href="https://docs.google.com/forms/d/e/1FAIpQLSdKHl0EbOIKKyv6qDTgG-HbjktZDN5yF62cSU9NUcKyJJGiJg/viewform"</p>
+<p class="p1"><span class="Apple-converted-space">           </span>target="_blank" rel="noopener"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Continue to form</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn secondary" href="#problem"&gt;Review the problem&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="note" style="margin-top:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Note: If you want true pre-filled amounts, we’ll generate a Google Forms “prefill link” for each option once you share the field name or prefill URL.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;© &lt;span id="year"&gt;&lt;/span&gt; Kronos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;AI Infrastructure for Nonprofit Growth&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("year").textContent = new Date().getFullYear();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Basic UI convenience: remembers the user's selection.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// For true Google Form prefills, replace these with actual prefill URLs.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function prefill(amount){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const base = "https://docs.google.com/forms/d/e/1FAIpQLSdKHl0EbOIKKyv6qDTgG-HbjktZDN5yF62cSU9NUcKyJJGiJg/viewform";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const link = document.getElementById("supportLink");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Placeholder behavior: append a simple fragment for tracking (won't prefill Google Forms).</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Replace with real prefill links when available.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let suffix = "";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(amount === "other") suffix = "#amount=other";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>else suffix = "#amount=" + encodeURIComponent(amount);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>link.href = base + suffix;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>link.textContent = (amount === "other") ? "Continue to form (Other)" : ("Continue to form ($" + amount + ")");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
